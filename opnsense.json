@@ -81,7 +81,7 @@
     "http_directory": "http",
     "http_port_max": "10089",
     "http_port_min": "10082",
-    "iso_checksum": "4f41d9d7d3a087ce5fe67b3a8570df730479ebb415d4d27d5f603b3f7dd81b5f",
+    "iso_checksum": "e551195a59422d926c090be741bc25b8dbeea5491791bcdffff0de6da07a4941",
     "iso_url": "./opnsense.iso",
     "memory_size": "4096",
     "shutdown_command": "shutdown -p now",
