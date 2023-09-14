@@ -1,0 +1,31 @@
+name: image-testing-topology
+
+hosts:
+  - name: image-test
+    base_box: 
+      image: IMAGE_NAME
+      mgmt_user: freebsd
+    flavor: csirtmu.tiny1x2
+
+routers:
+  - name: router
+    base_box:
+      image: debian-10
+      mgmt_user: debian
+    flavor: csirtmu.tiny1x2
+
+networks:
+  - name: network
+    cidr: 10.0.0.0/24
+
+net_mappings:
+    - host: image-test
+      network: network
+      ip: 10.0.0.10
+
+router_mappings:
+    - router: router
+      network: network
+      ip: 10.0.0.1
+
+groups: []
