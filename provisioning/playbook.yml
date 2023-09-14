@@ -1,5 +1,5 @@
 - name: Hello world
-  hosts: all
+  hosts: image-test
   gather_facts: no
   become: yes
   tasks:
@@ -18,5 +18,3 @@
   
     - name: Print hello world
       debug:
-        msg: "Hello World"
-
