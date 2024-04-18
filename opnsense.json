@@ -10,7 +10,7 @@
         "<enter><wait2s>",
         "<down><enter><wait2s>",
         "<left><enter><wait2s>",
-        "<wait3m>",
+        "<wait5m>",
         "<down><enter><wait>",
         "<wait1m30s>",
         "root<enter>",
