@@ -75,7 +75,7 @@
   "variables": {
     "boot_wait": "2s",
     "cpus": "4",
-    "disk_size": "16384",
+    "disk_size": "8192",
     "headless": "true",
     "guest_os_type": "FreeBSD_64",
     "http_directory": "http",
