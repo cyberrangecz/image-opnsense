@@ -1,18 +1,18 @@
-name: image-testing-topology
+name: opnsense-testing-topology
 
 hosts:
   - name: image-test
     base_box: 
       image: IMAGE_NAME
       mgmt_user: freebsd
-    flavor: csirtmu.tiny1x2
+    flavor: standard.small
 
 routers:
   - name: router
     base_box:
       image: debian-10
       mgmt_user: debian
-    flavor: csirtmu.tiny1x2
+    flavor: standard.small
 
 networks:
   - name: network
