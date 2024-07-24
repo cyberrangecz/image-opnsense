@@ -13,18 +13,6 @@ xml edit --inplace -s '/opnsense/interfaces/vtnet1' -t elem -n enable -v 1 /conf
 xml edit --inplace -s '/opnsense/interfaces/vtnet1' -t elem -n ipaddr -v dhcp /conf/config.xml
 xml edit --inplace -s '/opnsense/interfaces/vtnet1' -t elem -n alias-subnet -v 32 /conf/config.xml
 
-# Add freebsd user
-xml edit --inplace -a '/opnsense/system/user[last()]' -t elem -n user /conf/config.xml
-xml edit --inplace -s '/opnsense/system/user[last()]' -t elem -n name -v freebsd /conf/config.xml
-xml edit --inplace -s '/opnsense/system/user[last()]' -t elem -n descr -v FreeBSD /conf/config.xml
-xml edit --inplace -s '/opnsense/system/user[last()]' -t elem -n scope -v system /conf/config.xml
-xml edit --inplace -s '/opnsense/system/user[last()]' -t elem -n groupname -v admins /conf/config.xml
-xml edit --inplace -s '/opnsense/system/user[last()]' -t elem -n password -v '*' /conf/config.xml
-xml edit --inplace -s '/opnsense/system/user[last()]' -t elem -n shell -v '/bin/tcsh' /conf/config.xml
-xml edit --inplace -s '/opnsense/system/user[last()]' -t elem -n uid -v 1001 /conf/config.xml
-xml edit --inplace -s '/opnsense/system/user[last()]' -t elem -n authorizedkeys -v `cat /usr/home/freebsd/.ssh/authorized_keys | base64 | tr -d '\n'` /conf/config.xml
-xml edit --inplace -a '/opnsense/system/group[name[text()="admins"]]/member[last()]' -t elem -n member -v 1001 /conf/config.xml
-
 # Workaround for https://gitlab.ics.muni.cz/muni-kypo-images/opnsense/-/issues/3
 route -4n del 147.251.4.33/32
 route -4n del 147.251.6.10/32
