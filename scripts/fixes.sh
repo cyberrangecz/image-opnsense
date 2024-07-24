@@ -14,8 +14,6 @@ xml edit --inplace -s '/opnsense/interfaces/vtnet1' -t elem -n ipaddr -v dhcp /c
 xml edit --inplace -s '/opnsense/interfaces/vtnet1' -t elem -n alias-subnet -v 32 /conf/config.xml
 
 # Workaround for https://gitlab.ics.muni.cz/muni-kypo-images/opnsense/-/issues/3
-route -4n del 147.251.4.33/32
-route -4n del 147.251.6.10/32
 xml edit --inplace -s '/opnsense/staticroutes' -t elem -n route /conf/config.xml
 xml edit --inplace -s '/opnsense/staticroutes/route[last()]' -t attr -n uuid -v 3f53cb8b-4b68-40e7-ad13-82921fde1cee /conf/config.xml
 xml edit --inplace -s '/opnsense/staticroutes/route[last()]' -t elem -n network -v 147.251.4.33/32 /conf/config.xml
