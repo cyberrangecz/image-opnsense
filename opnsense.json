@@ -66,6 +66,7 @@
     },
     {
       "scripts": [
+        "scripts/fixes.sh",
         "scripts/disable-root-password.sh"
       ],
       "type": "shell",
