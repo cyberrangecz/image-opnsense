@@ -7,7 +7,7 @@
         "installer<enter>",
         "opnsense<enter><wait>",
         "<enter><wait2s>",
-        "<enter><wait2s>",
+        "<down><enter><wait2s>",
         "<down><enter><wait2s>",
         "<left><enter><wait2s>",
         "<wait5m>",
@@ -66,6 +66,7 @@
     },
     {
       "scripts": [
+        "scripts/fixes.sh",
         "scripts/disable-root-password.sh"
       ],
       "type": "shell",
@@ -81,7 +82,7 @@
     "http_directory": "http",
     "http_port_max": "10089",
     "http_port_min": "10082",
-    "iso_checksum": "348941a4e00bd57b6e8515d32f7a78c43e0087746d13939ad507a1ec3445bd97",
+    "iso_checksum": "d844c17194e3797c33384bea580d2a842c217a9186e75c686660846ed1207619",
     "iso_url": "./opnsense.iso",
     "memory_size": "4096",
     "shutdown_command": "shutdown -p now",
