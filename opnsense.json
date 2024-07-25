@@ -7,7 +7,7 @@
         "installer<enter>",
         "opnsense<enter><wait>",
         "<enter><wait2s>",
-        "<enter><wait2s>",
+        "<down><enter><wait2s>",
         "<down><enter><wait2s>",
         "<left><enter><wait2s>",
         "<wait5m>",
