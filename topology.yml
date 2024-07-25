@@ -10,8 +10,8 @@ hosts:
 routers:
   - name: router
     base_box:
-      image: debian-10
-      mgmt_user: debian
+      image: IMAGE_NAME
+      mgmt_user: freebsd
     flavor: standard.small
 
 networks:
