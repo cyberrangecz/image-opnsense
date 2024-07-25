@@ -11,6 +11,6 @@ build-qemu:
   before_script:
     - !reference [ .build, before_script ]
     - if [ ! -f opnsense.iso ]; then
-    -  wget -nv https://mirror.dns-root.de/opnsense/releases/24.7/OPNsense-24.7.r2-dvd-amd64.iso.bz2 -O opnsense.iso.bz2
+    -  wget -nv https://mirror.dns-root.de/opnsense/releases/24.7/OPNsense-24.7-dvd-amd64.iso.bz2 -O opnsense.iso.bz2
     -  bunzip2 opnsense.iso.bz2
     - fi
