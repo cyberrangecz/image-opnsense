@@ -3,12 +3,12 @@ set -e
 
 # Install xmlstarlet
 echo "FreeBSD: { enabled: yes }" > /usr/local/etc/pkg/repos/FreeBSD.conf
-pkg update
-pkg install -y xmlstarlet base64
+pkg-static update
+pkg-static install -y xmlstarlet base64
 echo "FreeBSD: { enabled: no }" > /usr/local/etc/pkg/repos/FreeBSD.conf
-pkg update
+pkg-static update
 
-pkg install -y net/cloud-init os-qemu-guest-agent-1.2
+pkg-static install -y net/cloud-init os-qemu-guest-agent-1.2
 echo 'qemu_guest_agent_enable="YES"' >> /etc/rc.conf
 echo 'qemu_guest_agent_flags="-d -v -l /var/log/qemu-ga.log"' >> /etc/rc.conf
 echo 'cloudinit_enable="YES"' >> /etc/rc.conf
