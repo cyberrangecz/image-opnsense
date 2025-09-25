@@ -40,6 +40,7 @@ source "qemu" "opnsense" {
     "reboot<enter><wait30s>"
   ]
   boot_wait           = "2s"
+  accelerator         = "kvm"
   disk_interface      = "virtio-scsi"
   disk_size           = "8192"
   format              = "qcow2"
