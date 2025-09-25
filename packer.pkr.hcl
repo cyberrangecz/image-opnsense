@@ -20,7 +20,7 @@ data "external-raw" "opnsense_iso" {
 
 source "qemu" "opnsense" {
   boot_command = [
-    "<wait1m30s>",
+    "<wait2m>",
     "installer<enter>",
     "opnsense<enter><wait10s>",
     "<enter><wait5s>",
