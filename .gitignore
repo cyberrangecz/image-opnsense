@@ -1,0 +1,4 @@
+.env
+target-qemu/
+.terraform/
+opnsense.iso
