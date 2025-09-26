@@ -20,20 +20,20 @@ data "external-raw" "opnsense_iso" {
 
 source "qemu" "opnsense" {
   boot_command = [
-    "<wait2m>",
-    "installer<enter>",
+    "<wait2m>", # first boot
+    "installer<enter>", # start installer
     "opnsense<enter><wait10s>",
     "<enter><wait5s>",
-    "<down><enter><wait5s>",
-    "<down><enter><wait5s>",
-    "<left><enter><wait5s>",
-    "<wait8m>",
-    "<down><enter><wait5s>",
-    "<enter><wait5s>",
-    "<wait2m>",
+    "<down><enter><wait5s>", # UFS
+    "<down><enter><wait5s>", # second disk
+    "<left><enter><wait5s>", # confirm overwriting
+    "<wait10m>", # install
+    "<down><enter><wait5s>", # complete install
+    "<enter><wait5s>", # reboot now
+    "<wait2m>", # first boot into installed
     "root<enter>",
     "opnsense<enter><wait>",
-    "8<enter><wait2s>",
+    "8<enter><wait2s>", # enter shell
     "dhclient vtnet0<enter><wait5s>",
     "telnet {{ .HTTPIP }} {{ .HTTPPort }} | sed '1,/^$/d' >/conf/config.xml<wait><enter>",
     "GET /config.xml HTTP/1.0<enter><enter>",
