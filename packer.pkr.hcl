@@ -14,7 +14,7 @@ packer {
 data "external-raw" "opnsense_iso" {
   program = [
     "bash", "-c",
-    "if [ ! -f opnsense.iso ]; then wget -nv https://mirror.dns-root.de/opnsense/releases/25.7/OPNsense-25.7-dvd-amd64.iso.bz2 -O opnsense.iso.bz2; bunzip2 opnsense.iso.bz2; fi"
+    "if [ ! -f opnsense.iso ]; then wget -nv https://mirror.dns-root.de/opnsense/releases/26.1/OPNsense-26.1-dvd-amd64.iso.bz2 -O opnsense.iso.bz2; bunzip2 opnsense.iso.bz2; fi"
   ]
 }
 
@@ -48,7 +48,7 @@ source "qemu" "opnsense" {
   http_directory      = "http"
   http_port_max       = "10089"
   http_port_min       = "10082"
-  iso_checksum        = "36ec856ad34d1a497e9edd19183ac2b63aa3f9bb9ff7e7ff7cdc93d319a3ec2c"
+  iso_checksum        = "51ca500465611a559f651eb10be6b3342c07efa0db18c78689dda4266b1ca9a8"
   iso_url             = "./opnsense.iso"
   net_device          = "virtio-net"
   output_directory    = "target-qemu"
