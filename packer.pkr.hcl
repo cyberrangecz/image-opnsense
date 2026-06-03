@@ -20,26 +20,17 @@ data "external-raw" "opnsense_iso" {
 
 source "qemu" "opnsense" {
   boot_command = [
-    "<wait2m>", # first boot
-    "installer<enter>", # start installer
+    "root<enter>", # enter live system
     "opnsense<enter><wait10s>",
-    "<enter><wait5s>",
-    "<down><enter><wait5s>", # UFS
-    "<down><enter><wait5s>", # second disk
-    "<left><enter><wait5s>", # confirm overwriting
-    "<wait10m>", # install
-    "<down><enter><wait5s>", # complete install
-    "<enter><wait5s>", # reboot now
-    "<wait2m>", # first boot into installed
-    "root<enter>",
-    "opnsense<enter><wait>",
     "8<enter><wait2s>", # enter shell
     "dhclient vtnet0<enter><wait5s>",
-    "telnet {{ .HTTPIP }} {{ .HTTPPort }} | sed '1,/^$/d' >/conf/config.xml<wait><enter>",
+    "telnet {{ .HTTPIP }} {{ .HTTPPort }} | sed '1,/^$/d' >/etc/opnsense-autoinstall-config.xml<wait><enter>",
     "GET /config.xml HTTP/1.0<enter><enter>",
-    "reboot<enter><wait30s>"
+    "telnet {{ .HTTPIP }} {{ .HTTPPort }} | sed '1,/^$/d' | /bin/sh<wait><enter>",
+    "GET /autoinstall.sh HTTP/1.0<enter><enter>",
+    "<wait1m>"
   ]
-  boot_wait           = "2s"
+  boot_wait           = "2m"
   accelerator         = "kvm"
   disk_interface      = "virtio-scsi"
   disk_size           = "8192"
@@ -54,7 +45,7 @@ source "qemu" "opnsense" {
   output_directory    = "target-qemu"
   qemuargs            = [["-m", "4096m"], ["-smp", "cpus=4,maxcpus=16,cores=4"]]
   shutdown_command    = "shutdown -p now"
-  ssh_password        = "opnsense"
+  ssh_password        = "installed"
   ssh_port            = "22"
   ssh_username        = "root"
   ssh_wait_timeout    = "5m"
