@@ -48,7 +48,7 @@ source "qemu" "opnsense" {
   ssh_password        = "installed"
   ssh_port            = "22"
   ssh_username        = "root"
-  ssh_wait_timeout    = "5m"
+  ssh_wait_timeout    = "20m"
   use_default_display = "true"
   vm_name             = "opnsense"
   vnc_bind_address    = "0.0.0.0"
