@@ -7,7 +7,8 @@
     <timezone>Etc/UTC</timezone>
     <timeservers>pool.ntp.org</timeservers>
     <language>en_US</language>
-    <dnsallowoverride>1</dnsallowoverride>
+    <dnsallowoverride_exclude/>
+    <dnsserver>1.1.1.1</dnsserver>
     <webgui>
       <protocol>https</protocol>
     </webgui>
