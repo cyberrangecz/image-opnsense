@@ -12,3 +12,6 @@ xml edit --inplace -s '/opnsense/interfaces/vtnet1' -t elem -n descr -v vtnet1 /
 xml edit --inplace -s '/opnsense/interfaces/vtnet1' -t elem -n enable -v 1 /conf/config.xml
 xml edit --inplace -s '/opnsense/interfaces/vtnet1' -t elem -n ipaddr -v dhcp /conf/config.xml
 xml edit --inplace -s '/opnsense/interfaces/vtnet1' -t elem -n alias-subnet -v 32 /conf/config.xml
+
+# Reinstall pkg to fix segmentation fault of pkg
+sudo pkg-static install -fy pkg
