@@ -28,4 +28,8 @@ router_mappings:
       network: network
       ip: 10.0.0.1
 
-groups: []
+groups:
+  - name: monitor-os
+    nodes: []
+  - name: monitor-icmp
+    nodes: []
