@@ -2,7 +2,7 @@ name: opnsense-testing-topology
 
 hosts:
   - name: image-test
-    base_box: 
+    base_box:
       image: opnsense
       mgmt_user: freebsd
     flavor: standard.small
@@ -33,3 +33,8 @@ groups:
     nodes: []
   - name: monitor-icmp
     nodes: []
+
+vpn_entrypoints:
+  - name: router
+    routes:
+      - 10.0.0.0/24
