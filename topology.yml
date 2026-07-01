@@ -34,7 +34,8 @@ groups:
   - name: monitor-icmp
     nodes: []
 
-vpn_entrypoints:
-  - name: router
-    routes:
-      - 10.0.0.0/24
+vpn:
+  entrypoints:
+    - name: router
+      routes:
+        - 10.0.0.0/24
