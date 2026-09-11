@@ -9,6 +9,7 @@
     <language>en_US</language>
     <dnsallowoverride_exclude/>
     <dnsserver>1.1.1.1</dnsserver>
+    <disablefilter>enabled</disablefilter>
     <webgui>
       <protocol>https</protocol>
     </webgui>
@@ -40,5 +41,10 @@
       <if>em0</if>
       <ipaddr>dhcp</ipaddr>
     </lan>
+    <vtnet1>
+      <enable>1</enable>
+      <if>vtnet1</if>
+      <ipaddr>dhcp</ipaddr>
+    </vtnet1>
   </interfaces>
 </opnsense>
