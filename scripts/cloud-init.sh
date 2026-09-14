@@ -6,7 +6,8 @@ export IGNORE_OSVERSION=yes
 
 echo "FreeBSD: { enabled: yes }" > /usr/local/etc/pkg/repos/FreeBSD.conf
 pkg-static update -f
-pkg-static install -y xmlstarlet base64 py312-cloud-init #-24.1.4_4
+pkg-static install -y xmlstarlet base64 py312-cloud-init
+pkg-static install -y xmlstarlet base64 py312-cloud-init
 echo 'cloudinit_enable="YES"' >> /etc/rc.conf
 echo "FreeBSD: { enabled: no }" > /usr/local/etc/pkg/repos/FreeBSD.conf
 pkg-static update -f
