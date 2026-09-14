@@ -13,7 +13,7 @@ cd /usr/local/cloud-init
 . ./bin/activate
 fetch -o cloud-init-25.2.tar.gz https://github.com/canonical/cloud-init/archive/refs/tags/25.2.tar.gz && tar xzf cloud-init-25.2.tar.gz
 cd cloud-init-25.2
-pip install 'jsonschema<4.18'
+pip install 'jsonschema<4.18' setuptools
 pip install -r requirements.txt
 python setup.py install --init-system sysvinit_freebsd
 echo 'cloudinit_enable="YES"' >> /etc/rc.conf
