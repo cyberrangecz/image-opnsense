@@ -50,4 +50,11 @@
       <ipaddr>dhcp</ipaddr>
     </vtnet1>
   </interfaces>
+  <OPNsense>
+    <IDS>
+      <general>
+        <interfaces>lan</interfaces>
+      </general>
+    </IDS>
+  </OPNsense>
 </opnsense>
