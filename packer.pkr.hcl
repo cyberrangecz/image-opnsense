@@ -60,8 +60,8 @@ build {
   sources = ["source.qemu.opnsense"]
 
   provisioner "file" {
-    destination = "/tmp/cloud.cfg"
-    source      = "cloud.cfg"
+    destination = "/tmp"
+    source      = "cloud-init"
   }
 
   provisioner "shell" {
