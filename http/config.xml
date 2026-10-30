@@ -10,6 +10,9 @@
     <dnsallowoverride_exclude/>
     <dnsserver>1.1.1.1</dnsserver>
     <disablefilter>enabled</disablefilter>
+    <primaryconsole>serial</primaryconsole>
+    <secondaryconsole>video</secondaryconsole>
+    <serialspeed>115200</serialspeed>
     <webgui>
       <protocol>https</protocol>
     </webgui>
